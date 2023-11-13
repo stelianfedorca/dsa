@@ -13,11 +13,12 @@ They are all hoisted to the top of their scope
 var variables are initialized with undefined, while const and let are not initialized
 </font>
 
-## 3. what is hoisting and why does it exists
+## 3. What is `Hoisting` and why does it exists
 
 <font size=3>
 Response:<br>
-Hoisting is a behaviour in which a function or variable can be used before declaration<br>
+Hoisting is a behaviour in which a function or variable can be used before declaration by moving them to the top of their scope<br>
+<strong>Only the declaration is hoisted</strong><br>
 In other words, the function and variable declarations are added to memory during the compile phase.<br>
 
 <strong>!! Initialization is not hoisted, only declaration</strong>
