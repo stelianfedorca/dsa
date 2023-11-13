@@ -6,9 +6,9 @@ const, var, let
 ## 2. difference between const, var, let
 
 <font size=3>Response:<br>
-a. const variable - is used when we want to work with constants, therefore it can't be updated or redeclared
-b. let variable - is used in order to be able to update that variable later but can not be redeclared
-c. var variable - can be updated and redeclared within its scope
+a. const variable - is used when we want to work with constants, therefore it can't be updated or redeclared <br>
+b. let variable - is used in order to be able to update that variable later but can not be redeclared <br>
+c. var variable - can be updated and redeclared within its scope <br>
 They are all hoisted to the top of their scope
 var variables are initialized with undefined, while const and let are not initialized
 </font>
@@ -25,7 +25,7 @@ In other words, the function and variable declarations are added to memory durin
 Why does it exists ??<br>
 Response:<br>
 Mainly for convenience, because it reduces the overhead<br>
-For example: if we have 3 functions and everyone of them calls the other but they are not in the correct order, without hoisting the js will yell at us because it can't see the function declaration but because hoisting basically moves the declaration at the top of the file, it's going to be perfectly fine</font>
+For example: if we have 3 functions and each one of them calls the other but they are not in the correct order, without hoisting the js will yell at us because it can't see the function declaration but because hoisting basically moves the declaration at the top of the file, it's going to be perfectly fine</font>
 <br>
 
 ## 4. What is Object.prototype
@@ -66,15 +66,17 @@ For example: if we have 3 functions and everyone of them calls the other but the
 </font>
 
 ## 8. What is a Promise
+
 <font size=4>
   Response: <br>
 
 It's an object that represents the eventual completion or failure of an asynchronous operation and its resulting value.<br>
-The promise object has 3 state: 
+The promise object has 3 state:
+
 - pending
 - resolved
 - rejected
-</font>
+  </font>
 
 ## 9. Mutable vs Immutable
 
@@ -83,5 +85,30 @@ The promise object has 3 state:
 
 In javascript, only objects and arrays are mutable, not primitive values.<br>
 A mutable object is an object whose state can be modified after its creation.<br>
+
+</font>
+
+## 10. What is Closure & why should we use it
+
+<font size=4>
+  Response: <br>
+  Closure is a functionality in Js that allows the inner function to access the outer scope of a function <br>
+  Closure helps to bound a function to its outer boundary and is created automatically whenever a function is created. <br>
+  It allows you to have private variables and also
+  to create reusable functions with predefined arguments (encapsulation)<br> 
+  Closures are functions that access values outside of their scope <br>
+  When a function uses a variable outside of its own scope, the interpreter creates a closure to store the values 
+  in heap memory in order to be accessed later. <br>
+  Closure = Function combined with its lexical environment
+  
+<br>
+</font>
+
+## 11. What is `useCallBack`
+
+<font size=4>
+  Response: <br>
+
+It is a hook that allows you to optimise the performance of your components by caching the function between re-renders <br>
 
 </font>
