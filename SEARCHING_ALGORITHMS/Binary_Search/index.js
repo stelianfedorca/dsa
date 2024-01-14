@@ -11,7 +11,7 @@
  * create 2 variables
  * one pointer to start index
  * and another pointer to last index
- * while the pointer comes before the right pointer: (in other words: while the element on the left is smaller than the one from right)
+ * while the left pointer comes before the right pointer: (in other words: while the element on the left is smaller than the one from right)
  *  - create a pointer in the middle
  *  - if value is found, return index
  *  - if the value is smaller than middle pivot, move right pointer down
@@ -23,10 +23,8 @@ function binarySearch(arr, value) {
   let right = arr.length - 1; // 10
 
   while (left <= right) {
-    console.log('right: ', right);
-    console.log('left: ', left);
     const mid = Math.floor(left + (right - left) / 2); // 6
-    console.log('mid: ', mid);
+    console.log(mid);
     if (value === arr[mid]) {
       // item found return index
       return mid;
@@ -42,6 +40,6 @@ function binarySearch(arr, value) {
   return -1;
 }
 
-console.log(binarySearch([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13], 12));
+console.log(binarySearch([-1, 0, 3, 5, 9, 12], 9));
 //
 // binarySearch(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k'], 'g');

@@ -184,6 +184,42 @@ class LinkedList {
     }
   }
 
+  isElementPresent(data) {
+    if (!this.head) return false;
+
+    let tempNode = this.head;
+    let isPresent = false;
+
+    while (tempNode) {
+      if (tempNode.data === data) {
+        isPresent = true;
+        break;
+      }
+      tempNode = tempNode.next;
+    }
+
+    return isPresent;
+  }
+
+  findIndex(data) {
+    if (!this.head) return -1;
+
+    let tempNode = this.head;
+    let found = false;
+    let currentIndex = 0;
+
+    while (tempNode) {
+      if (tempNode.data === data) {
+        found = true;
+        break;
+      }
+      tempNode = tempNode.next;
+      currentIndex++;
+    }
+
+    return found ? currentIndex : -1;
+  }
+
   traverse() {
     let currentNode = this.head;
 
@@ -206,6 +242,82 @@ class LinkedList {
   }
 }
 
+function ListNode(val, next) {
+  this.val = val === undefined ? 0 : val;
+  this.next = next === undefined ? null : next;
+}
+
+const reverseBetween = function (head, left, right) {
+  console.log('head: ', head);
+  let leftCurrentPosition = 1;
+  let rightCurrentPosition = 1;
+  let dummy = new ListNode(0);
+  dummy.next = head;
+  let leftPreviousNode = head;
+
+  // get the node before node at the left position
+
+  while (leftCurrentPosition < left - 1) {
+    leftPreviousNode = head;
+    head = head.next;
+    leftCurrentPosition++;
+  }
+
+  rightCurrentPosition = leftCurrentPosition;
+
+  let prevNode = null;
+  let tempNode = null;
+
+  while (rightCurrentPosition < right) {
+    // reverse the linked list
+    tempNode = head;
+    head = head.next;
+    tempNode.next = prevNode;
+    prevNode = tempNode;
+    rightCurrentPosition++;
+  }
+
+  console.log(tempNode);
+
+  // leftPreviousNode.next = tempNode;
+
+  // return tempNode;
+};
+
+function print(head) {
+  let arr = [];
+  let tempNode = head;
+
+  while (tempNode) {
+    console.log(tempNode);
+    arr.push(tempNode.data);
+    tempNode = tempNode.next;
+  }
+
+  console.log(arr);
+}
+
+let mergeTwoLists = function (l1, l2) {
+  const tempNode = new Node(0);
+  let currentNode = tempNode;
+  while (l1 && l2) {
+    if (l1.val < l2.val) {
+      currentNode.next = l1;
+      l1 = l1.next;
+    } else {
+      currentNode.next = l2;
+      l2 = l2.next;
+    }
+
+    currentNode = currentNode.next;
+  }
+
+  if (!l1) currentNode.next = l2;
+  else currentNode.next = l1;
+
+  return tempNode.next;
+};
+
 const linkedList = new LinkedList();
 linkedList.addToEnd(1);
 linkedList.addToEnd(2);
@@ -213,9 +325,38 @@ linkedList.addToEnd(3);
 linkedList.addToEnd(4);
 linkedList.addToEnd(5);
 
-linkedList.print();
-linkedList.reverse();
-linkedList.print();
+reverseBetween(linkedList, 2, 4);
+// // linkedList.print();
+
+// const linkedList2 = new LinkedList();
+
+// linkedList2.addToEnd(1);
+// linkedList2.addToEnd(3);
+// linkedList2.addToEnd(4);
+
+// let n1 = new Node(10);
+// let n2 = n1;
+// console.log(n1);
+// console.log(n2);
+
+// n2 = n2.next;
+
+// console.log(n2);
+// console.log(n1);
+
+// linkedList2.print();
+
+// const merged = mergeTwoLists(linkedList, linkedList2);
+// console.log('-------------------');
+// print(merged);
+
+// console.log(linkedList.isElementPresent(11));
+
+// console.log(linkedList.findIndex(2));
+
+// linkedList.print();
+// linkedList.reverse();
+// linkedList.print();
 
 // linkedList.traverse();
 

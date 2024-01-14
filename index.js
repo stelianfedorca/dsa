@@ -1,5 +1,3 @@
-console.log('hello from index.js');
-
 // Big O Notation
 
 /* 1. Motivate the need for something like Big O Notation
